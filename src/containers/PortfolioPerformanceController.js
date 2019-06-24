@@ -19,7 +19,7 @@ class PortfolioPerformanceController extends React.Component {
 
     request.get('/api/cryptocurrencies')
     .then((data) => {
-      this.setState({ownedAssets: data})
+      this.setState({ownedAssets: data._embedded})
     })
 
     const request2 = new Request();
@@ -32,7 +32,7 @@ class PortfolioPerformanceController extends React.Component {
 
   calculateTotalVal(){
     var totalValue = 0;
-    for (var asset in this.ownedAssets._embedded.cryptocurrencies){
+    for (var asset in this.ownedAssets.cryptocurrencies){
       for (var currency in this.cryptoList){
         if (currency.symbol === asset.code){
           this.cryptoGraphCodes.push(asset.code);
