@@ -21,7 +21,9 @@ class AssetBuyListController extends React.Component {
 
   render(){
     return (
+      <div>
       <p>Buy list </p>
+      </div>
     )
   }
 

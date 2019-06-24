@@ -8,8 +8,10 @@ class PortfolioMainController extends React.Component {
     super(props);
 
     this.state = {
-      ownedAssets: []
+      ownedAssets: null
     }
+
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount(){
@@ -17,14 +19,36 @@ class PortfolioMainController extends React.Component {
 
     request.get('/api/cryptocurrencies')
     .then((data) => {
-      this.setState({ownedAssets: data})
+      this.setState({ownedAssets: data._embedded})
+    })
+  }
+
+  handleDelete(id){
+    const request = new Request();
+    const url = "/api/cryptocurrencies/" + id;
+
+    request.delete(url)
+    .then(() => {
+    window.location = "/cryptocurrencies";
     })
   }
 
   render(){
     return (
-      <p>PortfolioMainController</p>
+      <div>
+        <h1>Portfolio</h1>
+        {this.state.ownedAssets && this.state.ownedAssets.cryptocurrencies.map(asset => {
+          return <div><ul><h2>{asset.name}</h2><h3>{asset.code}</h3><p>{asset.quantity}</p></ul>
+
+          <button onClick={this.deleteAsset}>Sell </button>
+          </div>
+
+
+        })}
+      </div>
     )
   }
+
 }
+
 export default PortfolioMainController;
