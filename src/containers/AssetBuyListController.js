@@ -22,6 +22,8 @@ class AssetBuyListController extends React.Component {
   render(){
     return (
       <div>
+      //We need to extract a list of currencies from the API and present it here.
+      //For loop, for every crypto in the list generate a new list item etc.
       <p>Buy list </p>
       </div>
     )
