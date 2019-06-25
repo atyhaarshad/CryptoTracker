@@ -18,6 +18,8 @@ const allCryptos = props.CryptoList.map((crypto, index) => {
     <li key={index}>
       <div>
         <CryptoListItem crypto={crypto} />
+        <button type="button">Performance</button>
+        <button type="button">Buy</button>
         </div>
     </li>
     )
