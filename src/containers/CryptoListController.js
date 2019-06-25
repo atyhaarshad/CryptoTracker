@@ -1,5 +1,6 @@
 import React from 'react';
 import Request from '../helpers/Request';
+import CryptoList from '../components/CryptoList'
 
 class AssetBuyListController extends React.Component {
 
@@ -13,7 +14,8 @@ class AssetBuyListController extends React.Component {
   componentDidMount(){
     const request = new Request();
 
-    request.get('https://cors-anywhere.herokuapp.com/https://dev-api.shrimpy.io/v1/exchanges/poloniex/ticker')
+    request.get(
+      'https://cors-anywhere.herokuapp.com/https://dev-api.shrimpy.io/v1/exchanges/poloniex/ticker')
     .then((data) => {
       this.setState({cryptoList: data})
     })
@@ -22,9 +24,7 @@ class AssetBuyListController extends React.Component {
   render(){
     return (
       <div>
-      //We need to extract a list of currencies from the API and present it here.
-      //For loop, for every crypto in the list generate a new list item etc.
-      <p>Buy list </p>
+        <CryptoList CryptoList={this.state.cryptoList} />
       </div>
     )
   }
