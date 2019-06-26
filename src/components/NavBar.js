@@ -3,10 +3,15 @@ import React from 'react';
 const NavBar = () => {
   return (
     <div>
-    <a href="/asset-buy-list">Buy Assets</a>
-    <a href="/portfolio-main">Portfolio Overview</a>
+    <a href="/">Home</a>
+    <br/>
+    <br/>
     <a href="/portfolio-performance">Portfolio Performance</a>
-    <a href="/chart-test">Chart Test</a>
+    <br/>
+    <br/>
+    <a href="/asset-buy-list">Buy/Sell</a>
+    <br/>
+    <br/>
     </div>
   );
 }

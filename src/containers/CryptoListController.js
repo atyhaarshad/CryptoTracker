@@ -1,6 +1,6 @@
 import React from 'react';
 import Request from '../helpers/Request';
-import CryptoList from '../components/CryptoList'
+import CryptoList from '../components/CryptoListComponents/CryptoList'
 
 class AssetBuyListController extends React.Component {
 

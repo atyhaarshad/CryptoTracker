@@ -36,15 +36,20 @@ class PortfolioMainController extends React.Component {
   render(){
     return (
       <div>
-        <h1>Portfolio</h1>
-        {this.state.ownedAssets && this.state.ownedAssets.cryptocurrencies.map(asset => {
-          return <div><ul><h2>{asset.name}</h2><h3>{asset.code}</h3><p>{asset.quantity}</p></ul>
+        <h1>C R Y P T O C A R N A G E</h1>
+        <h3>Welcome Back User</h3>
+        <h3>The overall value of your portfolio today is:</h3>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <h3>Your current assets:</h3>
 
-          <button onClick={this.deleteAsset}>Sell </button>
-          </div>
-
-
-        })}
       </div>
     )
   }

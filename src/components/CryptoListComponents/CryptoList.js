@@ -1,10 +1,6 @@
 import React from 'react'
 import CryptoListItem from './CryptoListItem'
 
-
-// We now have a list of 56 currencies as props here, able to refer to it using
-// this.props
-// Do not forget about <Fragment> tags to render more than one DOM element.
 const CryptoList = (props) => {
 
   if(props.CryptoList.length === 0){
@@ -18,6 +14,8 @@ const allCryptos = props.CryptoList.map((crypto, index) => {
     <li key={index}>
       <div>
         <CryptoListItem crypto={crypto} />
+        <button type="button">Performance</button>
+        <button type="button">Buy</button>
         </div>
     </li>
     )

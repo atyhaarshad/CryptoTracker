@@ -30,28 +30,19 @@ class PortfolioPerformanceController extends React.Component {
 
   }
 
-  calculateTotalVal(){
-    var totalValue = 0;
-    for (var asset in this.ownedAssets.cryptocurrencies){
-      for (var currency in this.cryptoList){
-        if (currency.symbol === asset.code){
-          this.cryptoGraphCodes.push(asset.code);
-          totalValue += (asset.quantity * currency.priceUsd)
-        }
-      }
-    }
-    this.totalValue = totalValue;
-
-  }
 
   render(){
-    return(
-      <p>test</p>
+    return (
+      <div>
+      <h1>Portfolio Performance</h1>
+      <h3>Weekly performance:</h3>
+      </div>
     )
   }
 
-
 }
+
+
 
 
 export default PortfolioPerformanceController;
