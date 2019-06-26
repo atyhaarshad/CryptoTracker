@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import PortfolioMainController from './PortfolioMainController';
 import PortfolioPerformanceController from './PortfolioPerformanceController';
 import CryptoListController from './CryptoListController';
-import ChartTest from './ChartTest';
 
 
 const MainContainer = () => {
@@ -14,9 +13,9 @@ const MainContainer = () => {
 
       <Switch>
         <Route path="/asset-buy-list" component={CryptoListController}/>
-        <Route path="/portfolio-main" component={PortfolioMainController}/>
         <Route path="/portfolio-performance" component={PortfolioPerformanceController}/>
-        <Route path="/chart-test" component={ChartTest}/>
+        <Route path="/" component={PortfolioMainController}/>
+
       </Switch>
     </React.Fragment>
     </Router>
